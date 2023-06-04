@@ -1,0 +1,81 @@
+stages:
+  - build
+  - deploy to test
+  - deploy staging
+  - deploy prod
+
+variables:
+  BOT_DEPLOY_NAMESPACE: booking-team
+  BOT_DEPLOY_SERVICE: tariffcard-spa
+
+
+# merge_requests
+docker image:
+  stage: build
+  tags:
+    - nmarket-docker
+  script:
+    - sh /runner-scripts/docker-build-login-push.sh $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME
+  only:
+    refs:
+      - merge_requests
+
+# master
+build master:
+  stage: build
+  tags:
+    - nmarket-docker
+  script:
+    - sh /runner-scripts/docker-build-login-push.sh stable
+  only:
+    refs:
+      - master
+
+# merge_requests and master
+tariffcard.brokerage.iy deploy:
+  stage: deploy to test
+  environment:
+    name: nmarket_alpine
+    url: http://tariffcard.brokerage.iy
+  when: manual
+  tags:
+    - nmarket-docker
+  script:
+    - sh /runner-scripts/docker-build-login-push.sh rc
+  only:
+    refs:
+      - merge_requests
+      - master
+
+test-tariffcard.nmarket.pro deploy:
+  stage: deploy staging
+  environment:
+    name: k8s.test
+    url: https://test-tariffcard.nmarket.pro
+  variables:
+    BOT_DEPLOY_ENVIRONMENT: staging
+  when: manual  
+  tags:
+    - nmarket-k8s.test
+  script:
+    - echo "this should never run"
+  only:
+    refs:
+      - merge_requests
+      - master
+
+tariffcard.nmarket.pro deploy:
+  stage: deploy prod
+  environment:
+    name: k8s.prod
+    url: https://tariffcard.nmarket.pro
+  variables:
+    BOT_DEPLOY_ENVIRONMENT: production
+  when: manual  
+  tags:
+    - nmarket-k8s.prod
+  script:
+    - echo "this should never run"
+  only:
+    refs:
+      - master

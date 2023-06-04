@@ -1,0 +1,11 @@
+api/TariffCardService.API/bin/
+api/TariffCardService.API/obj/
+api/TariffCardService.Business/obj/
+api/TariffCardService.Core/bin/
+api/TariffCardService.Business/bin/Debug/net5.0/TariffCardService.Core.pdb
+api/TariffCardService.Business/bin/
+api/TariffCardService.Core/obj/
+api/TariffCardService.DataAccess/bin/
+api/TariffCardService.DataAccess/obj/
+api/TariffCardService.Worker/bin/
+api/TariffCardService.Worker/obj/

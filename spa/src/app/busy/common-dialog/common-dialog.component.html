@@ -1,0 +1,11 @@
+<div class="common-dialog">
+    <!-- TODO: add logic to show another types of errors -->
+    <mat-icon class="common-dialog__icon">error</mat-icon>
+    <h1 class="common-dialog__title">{{ data || 'Произошла ошибка' }}</h1>
+    <p class="common-dialog__description">По вопросам звоните<br>+7 (812) 748-21-23</p>
+    <div class="tc-form-button">
+        <button mat-dialog-close
+                mat-flat-button
+                color="accent">Продолжить</button>
+    </div>
+</div>

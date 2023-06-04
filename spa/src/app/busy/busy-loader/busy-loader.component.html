@@ -1,0 +1,21 @@
+<div class="tc-busy-loader">
+    <div class="tc-busy-loader__overlay">
+        <div class="tc-busy-loader__container">
+            <div class="busy-custom-icon">
+                <svg class="busy-custom-icon__svg"
+                     [attr.width]="CIRCLE_SIZE"
+                     [attr.height]="CIRCLE_SIZE"
+                     [attr.viewBox]="CIRCLE_VIEW_BOX">
+                    <circle class="busy-custom-icon__svg-circle"
+                            [attr.stroke-dasharray]="CIRCLE_DASHARRAY"
+                            [attr.stroke-dashoffset]="CIRCLE_DASHOFFSET"
+                            [attr.cx]="CIRCLE_OFFSET"
+                            [attr.cy]="CIRCLE_OFFSET"
+                            [attr.r]="CIRCLE_RADIUS"
+                            [attr.stroke-width]="CIRCLE_STROKE_WIDTH" />
+                </svg>
+            </div>
+            <span class="tc-busy-loader__text">Загрузка...</span>
+        </div>
+    </div>
+</div>

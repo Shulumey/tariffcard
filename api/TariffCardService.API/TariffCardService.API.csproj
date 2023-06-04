@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>25023e71-b655-4c86-9279-9560412c7c48</UserSecretsId>
+  </PropertyGroup>
+
+  <Import Project="..\..\build\Default.targets" />
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="5.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.2.22" />
+    <PackageReference Include="NLog" Version="4.7.11" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.7.4" />
+    <PackageReference Include="NLog.Targets.ElasticSearch" Version="7.6.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="CSharp.StyleCop" Version="1.0.450089527">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NmarketAuthLibrary" Version="1.0.450107343-b-3132" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TariffCardService.Business\TariffCardService.Business.csproj" />
+    <ProjectReference Include="..\TariffCardService.Core\TariffCardService.Core.csproj" />
+    <ProjectReference Include="..\TariffCardService.DataAccess\TariffCardService.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

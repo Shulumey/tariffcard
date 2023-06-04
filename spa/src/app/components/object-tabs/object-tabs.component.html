@@ -1,0 +1,6 @@
+<ul class="object-tabs">
+    <li class="object-tabs__item" id="analytics_tariff_type_flat" [ngClass]="{'object-tabs__item_active': isActive(1), 'object-tabs__item_hidden': isHidden(1)}" (click)="onTabChanged(1)">Квартиры и апартаменты</li>
+    <li class="object-tabs__item" id="analytics_tariff_type_commercial" [ngClass]="{'object-tabs__item_active': isActive(5), 'object-tabs__item_hidden': isHidden(5)}" (click)="onTabChanged(5)">Коммерция</li>
+    <li class="object-tabs__item" id="analytics_tariff_type_parking" [ngClass]="{'object-tabs__item_active': isActive(4), 'object-tabs__item_hidden': isHidden(4)}" (click)="onTabChanged(4)">Паркинг</li>
+    <li class="object-tabs__item" id="analytics_tariff_type_storage" [ngClass]="{'object-tabs__item_active': isActive(3), 'object-tabs__item_hidden': isHidden(3)}" (click)="onTabChanged(3)">Кладовые</li>
+</ul>

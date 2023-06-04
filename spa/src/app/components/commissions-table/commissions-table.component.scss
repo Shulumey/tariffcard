@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+tr.mat-row, tr.mat-footer-row {
+    height: auto;
+}
+
+.commissions-table {
+    width: 921px;
+    border: 1px solid #E7E4DE;
+    border-bottom: 0;
+    border-radius: 8px 8px 0 0;
+
+    td {
+        font-size: 14px;
+    }
+
+    &__empty-row {
+        td {
+            height: 64px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    }
+}
+
+th {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    color: #383736;
+    background-color: #F5F4F2;
+    border-right: 1px solid #E7E4DE;
+
+    &:first-child {
+        border-radius: 6px 0 0 0;
+    }
+
+    &:last-child {
+        border-right: 0;
+        border-radius: 0 6px 0 0;
+    }
+}
+
+td {
+    vertical-align: baseline;
+    border-right: 1px solid #E7E4DE;
+
+    &:last-child {
+        border-right: 0;
+        border-bottom-style: none;
+    }
+}
+
+tr:last-of-type td {
+    border-bottom: 1px solid #E7E4DE;
+}
+
+.commissions-table__seller {
+    width: 212px;
+    height: 64px;
+}
+
+.commissions-table__complex {
+    width: 544px;
+    height: 64px;
+}
+
+.commissions-table__complex-btn {
+    margin-left: 8px;
+    padding: 0;
+    background: 0;
+    border: 0;
+    color: #55A2D6;
+    cursor: pointer;
+}
+
+.commissions-table__commission {
+    width: 162px;
+    height: 64px;
+    padding-right: 32px !important;
+}
+
+.commissions-table__grey-number {
+    color: #7A7976;
+}
+
+.commissions-table__number {
+    color: #383736;
+    display: inline-block;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.commission {
+    text-align: right;
+}
+
+.commissions-table__cell {
+    height: 32px;
+    padding: 6px 12px;
+}
+
+.commissions-table__cell_seller {
+    padding: 6px 12px 12px;
+    vertical-align: baseline;
+}
+
+.commissions-table__cell_complex {
+    padding-bottom: 0 !important;
+    line-height: 20px;
+    border-bottom-style: none;
+    color: #383736;
+}
+
+.commissions-table__cell_complex:hover {
+    background-color: #E6F2FA;
+}
+
+.commissions-table__row-house .commissions-table__cell_complex {
+    height: 32px;
+    padding-left: 30px;
+}
+
+.commissions-table__row-object .commissions-table__cell_complex {
+    padding-left: 48px;
+}
+
+.commissions-table__group_row-last .commissions-table__cell_complex,
+.commissions-table__group_row-last .commissions-table__cell_commission {
+    border-bottom-style: solid;
+}
+
+.commissions-table__row-complex:hover .commissions-table__cell {
+    background-color: #E6F2FA;
+}
+
+.commissions-table__row-house:hover .commissions-table__cell {
+    background-color: #E6F2FA;
+}
+
+.commissions-table__row-object:hover .commissions-table__cell {
+    background-color: #E6F2FA;
+}
+
+.commissions-table__row-complex,
+.commissions-table__row-house,
+.commissions-table__row-object {
+    height: auto;
+}
+
+.commissions-table__cell_commission {
+    text-align: right;
+}
+
+.commissions-table__cell.commissions-table__cell_commission {
+    padding: 6px 12px;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type {
+    padding-left: 12px;
+}
+
+.cdk-header-cell {
+    padding-left: 12px;
+}
+
+.commissions-table__row-overriding-master .commissions-table__cell {
+    padding-left: 48px;
+    color: #7A7976;
+}
+
+
+::ng-deep {
+    .commissions-table__cell_seller {
+        border-bottom: 0;
+    }
+
+    .cross-region-tooltip {
+        margin-bottom: 8px;
+    }
+}
+
+.commissions-table-tooltip {
+    width: 292px;
+    height: auto;
+    color: #383736;
+
+    &__title {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+.tooltip-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}

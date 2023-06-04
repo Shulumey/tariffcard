@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+
+  tariffcard-spa:
+    image: registry.gitlab.com/industrysoft/booking-team/tariffcard/tariffcard-spa:rc
+    networks:
+      - prod-network
+
+  tariffcard-api:
+    image: registry.gitlab.com/industrysoft/booking-team/tariffcard/tariffcard-api:rc
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    extra_hosts:
+      - "dbdev:192.168.5.30"
+    networks:
+      - prod-network
+
+  industry-proxy:
+    image: registry.gitlab.com/industrysoft/common/ci/industry.proxy:stable
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - prod-network
+
+networks:
+  prod-network:
+    driver: bridge
+
+# docker login registry.gitlab.com  -u <user_name> -p <password>
+# docker-compose -f docker-compose.tester.yaml up

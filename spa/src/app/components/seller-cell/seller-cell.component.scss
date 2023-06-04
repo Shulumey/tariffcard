@@ -1,0 +1,42 @@
+.seller-cell__text {
+    color: #383736;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.seller-cell__seller-badge {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    height: 24px;
+    padding: 0 4px;
+    margin-top: 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: #E6F2FA;
+    color: #0F74B8;
+
+    svg {
+        margin-left: 6px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #0F74B8;
+    }
+}
+
+.seller-cell__seller-btn {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 0;
+    line-height: 20px;
+    background: 0;
+    border: 0;
+    text-align: left;
+    text-decoration-style: dashed;
+    text-decoration-line: underline;
+    text-underline-offset: 1px;
+    color: #7A7976;
+    cursor: pointer;
+}

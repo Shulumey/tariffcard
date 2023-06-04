@@ -1,0 +1,15 @@
+<div class="page">
+    <div class="page__header">
+        <a href="https://nmarket.pro/commission" id="analytics_tariff_back_to_oldschool" class="page__banner">Вернуться на старую версию тарифной карты</a>
+        <h1 class="page__title">
+            Тарифная карта от {{snapshotDateString}}
+        </h1>
+        <tc-object-tabs (activeChange)="onObjectTypeChanged($event)"></tc-object-tabs>
+    </div>
+    <div class="page__body">
+        <div class="page__body-inner">
+            <tc-seller-tabs (activeChange)="onSellerTapeChanged($event)"></tc-seller-tabs>
+            <tc-commission-table [complexes]="complexes"></tc-commission-table>
+        </div>
+    </div>
+</div>

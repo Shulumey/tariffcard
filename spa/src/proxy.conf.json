@@ -1,0 +1,12 @@
+{
+    "/silent-callback.html": {
+        "target": "http://widgets.brokerage.iy",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/silent-callback-by-proxy.html": {
+        "target": "http://widgets.brokerage.iy",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

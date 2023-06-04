@@ -1,0 +1,5 @@
+<ul class="seller-tabs">
+    <li class="seller-tabs__item" id="analytics_tariff_seller_developer" [ngClass]="{'seller-tabs__item_active': isActive(1), 'seller-tabs__item_disabled': isDisabled(1)}" (click)="onTabChanged(1)">Застройщики</li>
+    <li class="seller-tabs__item" id="analytics_tariff_seller_contractor" [ngClass]="{'seller-tabs__item_active': isActive(2), 'seller-tabs__item_disabled': isDisabled(2)}" (click)="onTabChanged(2)">Подрядчики</li>
+    <li class="seller-tabs__item" id="analytics_tariff_seller_cessions" [ngClass]="{'seller-tabs__item_active': isActive(3), 'seller-tabs__item_disabled': isDisabled(3)}" (click)="onTabChanged(3)">Переуступки</li>
+</ul>

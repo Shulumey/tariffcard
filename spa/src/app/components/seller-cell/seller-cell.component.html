@@ -1,0 +1,12 @@
+<div class="seller-cell__text">{{sellerName}}</div>
+<ng-container *ngIf="isSellerCommissionPrepayments">
+    <div *ngIf="!urlLandingPrepaymentBooking; else prepaymentsLinkTemplate" class="seller-cell__seller-badge">
+        Авансируемый застройщик
+    </div>
+    <ng-template #prepaymentsLinkTemplate>
+        <div class="seller-cell__seller-badge analytics_tariff_advance_link">
+            <a [href]="urlLandingPrepaymentBooking" target="_blank">Авансируемый застройщик</a>
+        </div>
+    </ng-template>
+</ng-container>
+<button class="seller-cell__seller-btn analytics_tariff_conditions" (click)="openTermsDialog()">Условия выплаты</button>

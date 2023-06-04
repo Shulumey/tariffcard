@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>TariffCardSpa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <script type="text/javascript">
+        window.nmApiHost = "nmstaging1.ru";
+        window.nmWidgetSettings = {
+            enableFooter: true,
+        };
+        var baseUrl = window.location.origin.indexOf("tariffcard") === 0 ? "/tariffcard/" : "/";
+        window.nmAuthSettings = {
+            useOidc: true,
+            oidcClientId: 'tariffcard_spa',
+            oidcPostLogoutRedirectUri: `${window.location.origin}${baseUrl}`,
+        };
+        (function (h) {
+            function c(resolve) { if (window.authService) { resolve(); return; } setTimeout(function () { c(resolve); }, 50); }
+            window.nmWidgetsLoaded = function () { return new Promise(c); };
+            var p = /test[-.].*nmarket\.pro$/gi.test(h) ? 'test-' : ''; var z = { b: 'brokerage.iy', p: 'nmarket.pro' }; var d;
+            if (h.indexOf(z.b) !== -1) { d = z.b; } else { d = z.p; if (h.indexOf(z.p) === -1) { p = 'test-'; } }
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.src = '//' + p + 'widgets.' + d + '/loader.js';
+            document.body.append(s);
+        })(window.location.host);
+    </script>
+    <app-root></app-root>
+</body>
+
+</html>

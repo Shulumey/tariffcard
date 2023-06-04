@@ -1,0 +1,29 @@
+:host {
+    display: block;
+}
+
+.common-dialog {
+    text-align: center;
+
+    &__icon {
+        height: 32px;
+        width: 32px;
+        font-size: 32px;
+        user-select: none;
+        color: rgb(var(--color-warn-500));
+        margin-bottom: 14px;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &__description {
+        font-size: 14px;
+        line-height: 20px;
+        color: rgb(var(--color-contrast-600));
+        margin: 2px 0 4px;
+    }
+}

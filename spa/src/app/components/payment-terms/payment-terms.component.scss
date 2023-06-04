@@ -1,0 +1,73 @@
+﻿::ng-deep {
+    .mat-dialog-container {
+        padding: 0;
+        border-radius: 8px;
+    }
+
+    .cdk-overlay-pane {
+        max-height: 90vh;
+    }
+}
+
+.payment-terms {
+    background-color: #fff;
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.04);
+
+    &__header {
+        padding: 16px 24px;
+        position: sticky;
+        top: 0;
+        border-bottom: 1px solid #F0EEEB;
+        background-color: #ffffff;
+    }
+
+    &__title {
+        margin: 0;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #383736;
+    }
+
+    &__close-btn {
+        display: flex;
+        width: 28px;
+        height: 28px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background-color: transparent;
+        border: 0;
+        border-radius: 4px;
+        cursor: pointer;
+
+        svg {
+            fill: #B2B0AB;
+        }
+
+        &:hover {
+            background-color: #F5F4F2;
+
+            svg {
+                fill: #383736;
+            }
+        }
+
+        &:active {
+            background-color: #E7E4DE;
+
+            svg {
+                fill: #383736;
+            }
+        }
+    }
+
+    &__text {
+        padding: 24px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #61605D;
+    }
+}

@@ -1,0 +1,33 @@
+.seller-tabs {
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    list-style: none;
+    margin: 32px auto 24px 0;
+    padding: 4px;
+    background-color: #F0EEEB;
+    border-radius: 8px;
+    min-height: 36px;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        min-height: 28px;
+        padding: 4px 16px;
+        color: #383736;
+        box-sizing: border-box;
+        font-size: 14px;
+        cursor: pointer;
+
+        &_active {
+            font-weight: 500;
+            background-color: #fff;
+            border-radius: 6px;
+        }
+
+        &_disabled {
+            color: #CCCAC5;
+            cursor: not-allowed;
+        }
+    }
+}

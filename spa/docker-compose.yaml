@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+
+  tariffcard-spa:
+    image: tariffcard-spa
+    build:
+      context: .
+      dockerfile: develop.Dockerfile
+    container_name: tariffcard-spa
+    environment:
+      # [Environment]::SetEnvironmentVariable("ENABLE_POLLING", "enabled", "Machine")
+      - ENABLE_POLLING
+    volumes:
+      - ./src:/ng-app/src
+    ports:
+      - "4200:4200"
+    networks:
+      - dev-network
+
+  tariffcard-api:
+    image: registry.gitlab.com/industrysoft/booking-team/tariffcard/tariffcard-api:stable
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5000:80"
+    extra_hosts:
+      - "dbdev:192.168.5.30"
+    networks:
+      - dev-network
+
+  industry-proxy:
+    image: registry.gitlab.com/industrysoft/common/ci/industry.proxy:stable
+    container_name: industry-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - TARIFF_CARD_SPA_PORT=4200
+    networks:
+      - dev-network
+
+
+networks:
+  dev-network:
+    external: true
+    # todo: for creation use command
+    # * C:\> docker network create dev-network
+
+# docker-compose pull
+# docker-compose up --build
